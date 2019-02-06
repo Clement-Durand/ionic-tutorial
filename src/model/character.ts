@@ -4,6 +4,7 @@ export class Character {
   homeworld: string;
   gender: string;
   species: string;
+  films: string[];
   /*
      films: string;
      */
@@ -20,11 +21,12 @@ export class Character {
   vehicles: string[];
   */
 
-  constructor(name: string, birth_year: string, homeworld: string, gender: string, species: string){
+  constructor(name: string, birth_year: string, homeworld: string, gender: string, species: string, films: string[]){
     this.name = name;
     this.birth_year = birth_year;
     this.homeworld = homeworld;
     this.gender = gender;
     this.species = species;
+    this.films = films;
   };
 }

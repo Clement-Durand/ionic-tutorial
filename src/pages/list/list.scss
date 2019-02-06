@@ -1,3 +1,62 @@
 page-list {
+  background: white !important;
+}
 
+.list-item {
+  border: none !important;width: 90vw;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px 0 black;
+  margin: 10px auto !important;
+  height: 50vw;
+  padding: 0 15px !important;
+}
+
+.list-content {
+  background: white;
+  margin-top: 44px; //takes into account the header but crops the last item
+}
+
+.item-inner {
+  border-bottom: none !important;
+  background-image: none !important;
+  padding-right: 0 !important;
+}
+
+.item-films {
+  margin: 0 !important;
+}
+
+.item-img {
+  width: 300px;
+  height: 50px;
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .1);
+  padding-top: 25vh;
+  img {
+    display: block;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    animation: img-spinner 1.2s .8s cubic-bezier(0.5, 0, 0.5, 1) infinite, drop-in .8s ease-in-out;
+    filter: blur(.001px);
+  }
+  @keyframes img-spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    66% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }@keyframes drop-in {
+     0% {
+       transform: translateY(-50vh);
+     }
+   }
 }

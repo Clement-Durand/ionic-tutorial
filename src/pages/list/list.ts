@@ -11,7 +11,9 @@ import {SwapiService} from "../../services/swapi.service";
 })
 export class ListPage {
   icons: string[];
-  items: Array<{name: string, homeworld: string, icon: string}>;
+  items: Array<{name: string, homeworld: string, films: string[], birth_year: string, species: string, gender: string, icon: string}>;
+  listSize = 10;
+  dbSize = 87;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiService: SwapiService) {
   }
@@ -25,8 +27,8 @@ export class ListPage {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
       'american-football', 'boat', 'bluetooth', 'build', 'man'];
     this.items = [];
-    let start = Math.floor(Math.random() * 76 + 1);
-    for(let i = 1; i < 11; i++) {
+    let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
+    for(let i = 1; i <= this.listSize; i++) {
       let character = await this.swapiService.getCharacterFromId(i + start);
       let icon;
       console.log(character);
@@ -38,6 +40,10 @@ export class ListPage {
       this.items.push({
         name: character.name,
         homeworld: character.homeworld,
+        films: character.films,
+        birth_year: character.birth_year,
+        species: character.species,
+        gender: character.gender,
         icon: icon
       });
     }
@@ -47,5 +53,9 @@ export class ListPage {
     this.navCtrl.push(ItemDetailsPage, {
       item: item
     });
+  }
+
+  calc(number): number {
+    return Math.floor(Math.random() * 100 + number);
   }
 }
