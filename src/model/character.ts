@@ -3,9 +3,9 @@ export class Character {
   birth_year: string;
   homeworld: string;
   gender: string;
+  species: string;
   /*
      films: string;
-     species: string[];
      */
   /*
   eye_color: string;
@@ -20,10 +20,11 @@ export class Character {
   vehicles: string[];
   */
 
-  constructor(name: string, birth_year: string, homeworld: string, gender: string){
+  constructor(name: string, birth_year: string, homeworld: string, gender: string, species: string){
     this.name = name;
     this.birth_year = birth_year;
     this.homeworld = homeworld;
     this.gender = gender;
+    this.species = species;
   };
 }

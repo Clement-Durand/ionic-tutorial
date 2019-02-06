@@ -10,7 +10,9 @@ export class SwapiService {
   async getCharacterFromId(id: number): Promise<Character> {
     const response = await this.http.get(this.url + 'people/' + id).toPromise();
     const planet = await this.http.get(response['homeworld']).toPromise();
+    const speciesUrl = response['species'][0];
+    const species = await this.http.get(speciesUrl).toPromise();
     // const films = await this.http.get(response['films']).toPromise();
-    return new Character(response['name'], response['birth_year'], planet['name'], response['gender']);
+    return new Character(response['name'], response['birth_year'], planet['name'], response['gender'], species['name']);
   }
 }
