@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="list-content" *ngIf="items.length > 3">
+<ion-content class="list-content" *ngIf="items.length > 1">
   <ion-refresher [pullMax]="400" (ionRefresh)="refresh()">
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
@@ -15,31 +15,45 @@
   </ion-refresher>
   <ion-list>
       <button ion-item class="list-item" *ngFor="let item of items" (click)="itemTapped($event, item)">
-        <ion-icon name="{{item.icon}}" item-left></ion-icon>
-        <div class="item-name">
-          <span>{{item.name}}</span>
-          <ion-icon name="{{this.iconStar}}"></ion-icon>
+        <div class="item-header">
+          <img class="item-img" src="{{item.img}}">
         </div>
-        <div class="item-infos">
-          <span class="item-gender">{{item.gender}}</span>
-          <span class="item-birth">{{item.birth_year}}</span>
-        </div>
-        <div class="item-films">
-          <div *ngFor="let film of item.films">
-            <span>{{film}}</span>
+
+        <div class="item-main">
+          <div class="item-name">
+            <span class="name">{{item.name}}</span>
+            <ion-icon class="favorite-icon" name="{{this.iconStar}}"></ion-icon>
+          </div>
+          <div class="item-infos">
+            <span class="item-gender">{{item.gender}}</span>
+            <span class="item-birth">{{item.birth_year}}</span>
           </div>
         </div>
-        <div class="item-img">
-          <img src="{{item.img}}">
+        <div class="item-desc">
+          <div class="item-films">
+            <div class="film" *ngFor="let film of item.films">
+              <span class="film-name">{{film}}</span>
+            </div>
+          </div>
         </div>
-        <div class="item-species"></div>
-        <div class="item-homeworld" item-right>
-          {{item.homeworld}}
+        <div class="item-footer">
+          <div class="item-species">
+            <ion-icon class="item-species-icon" name="{{item.icon}}"></ion-icon>
+            <div class="item-species-name">
+              {{item.species}}
+            </div>
+          </div>
+          <div class="item-homeworld">
+            <div class="item-homeworld-name">
+              {{item.homeworld}}
+            </div>
+            <ion-icon class="planet-icon" name="planet"></ion-icon>
+          </div>
         </div>
       </button>
   </ion-list>
 </ion-content>
 
-<div class="loading" *ngIf="items.length <= 3">
+<div class="loading" *ngIf="items.length <= 1">
   <img src="./../../assets/imgs/loading-spinner.png"/>
 </div>
