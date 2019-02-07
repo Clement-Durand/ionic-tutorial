@@ -30,8 +30,10 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
+      { title: 'Character List', component: ListPage },
+      { title: 'Favorites', component: undefined },
+      { title: 'News', component: undefined },
+      { title: 'Options', component: undefined },
       { title: 'Logout', component: LoginWelcomePage },
     ];
   }
@@ -49,8 +51,13 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    if(this.nav.getActive().component !== page.component) {
+    if(!this.isCurrentPage(page)) {
       this.nav.setRoot(page.component);
     }
+  }
+
+  isCurrentPage(page) {
+    if(page === undefined || this.nav.getActive() === undefined) return false;
+    return this.nav.getActive().component === page.component;
   }
 }
