@@ -42,7 +42,6 @@ page-list {
     height: 100px;
     width: 100px;
     animation: img-spinner 1.2s .8s cubic-bezier(0.5, 0, 0.5, 1) infinite, drop-in .8s ease-in-out;
-    filter: blur(.001px);
   }
   @keyframes img-spinner {
     0% {
