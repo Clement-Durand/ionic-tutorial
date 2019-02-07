@@ -11,7 +11,7 @@ import {SwapiService} from "../../services/swapi.service";
 })
 export class ListPage {
   icons: string[];
-  items: Array<{name: string, homeworld: string, films: string[], birth_year: string, species: string, gender: string, icon: string}>;
+  items: Array<{name: string, homeworld: string, films: string[], birth_year: string, species: string, gender: string, icon: string, img: string}>;
   listSize = 10;
   dbSize = 87;
 
@@ -24,8 +24,6 @@ export class ListPage {
       Humanoid: 'man',
       Droid: 'logo-android',
     };
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-      'american-football', 'boat', 'bluetooth', 'build', 'man'];
     this.items = [];
     let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
     for(let i = 1; i <= this.listSize; i++) {
@@ -35,8 +33,9 @@ export class ListPage {
       if(character.species == 'Humanoid' || character.species == 'Human' || character.species == 'Droid'){
         icon = test[character.species];
       } else {
-        icon = this.icons[Math.floor(Math.random() * this.icons.length)];
+        icon = 'help';
       }
+      let img = './../../assets/imgs/card-img-' + (Math.floor(Math.random() * 100)%5 + 1) + '.jpg';
       this.items.push({
         name: character.name,
         homeworld: character.homeworld,
@@ -44,7 +43,8 @@ export class ListPage {
         birth_year: character.birth_year,
         species: character.species,
         gender: character.gender,
-        icon: icon
+        icon: icon,
+        img: img,
       });
     }
   }
@@ -53,6 +53,10 @@ export class ListPage {
     this.navCtrl.push(ItemDetailsPage, {
       item: item
     });
+  }
+
+  refresh() {
+    this.navCtrl.setRoot(ListPage)
   }
 
   calc(number): number {
