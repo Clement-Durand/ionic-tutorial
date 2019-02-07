@@ -14,7 +14,7 @@ export class ListPage {
   items: Array<{name: string, homeworld: string, films: string[], birth_year: string, species: string, gender: string, icon: string, img: string}>;
   listSize = 10;
   dbSize = 87;
-
+  iconStar = 'star';
   constructor(public navCtrl: NavController, public navParams: NavParams, private swapiService: SwapiService) {
   }
 
