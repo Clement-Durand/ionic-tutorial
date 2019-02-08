@@ -9,7 +9,8 @@
   <ion-content>
     <ion-list>
       <button ion-item *ngFor="let p of pages" class="current" [class.current]="isCurrentPage(p)" (click)="openPage(p)" [disabled]="p.component === undefined">
-        {{p.title}}
+        <ion-icon class="page-icon" name="{{p.icon}}"></ion-icon>
+        <span class="page-title">{{p.title}}</span>
       </button>
     </ion-list>
   </ion-content>
