@@ -25,16 +25,18 @@ export class ListPage {
       Droid: 'logo-android',
     };
     this.items = [];
+    //pick a random starting id for the list
     let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
+    //fetch the data for the 10 items of the list
     for(let i = 1; i <= this.listSize; i++) {
       let character = await this.swapiService.getCharacterFromId(i + start);
       let icon;
-      console.log(character);
       if(character.species == 'Humanoid' || character.species == 'Human' || character.species == 'Droid'){
         icon = test[character.species];
       } else {
         icon = 'help';
       }
+      //pick a random image as background
       let img = './../../assets/imgs/card-img-' + (Math.floor(Math.random() * 100)%5 + 1) + '.jpg';
       this.items.push({
         name: character.name,
@@ -57,9 +59,5 @@ export class ListPage {
 
   refresh() {
     this.navCtrl.setRoot(ListPage)
-  }
-
-  calc(number): number {
-    return Math.floor(Math.random() * 100 + number);
   }
 }

@@ -56,6 +56,11 @@ export class MyApp {
     }
   }
 
+  /**
+   * Checks if the given page is the current one, used to display current page in menu and to cancel the action if
+   * the user clicks the current page
+   * @param page
+   */
   isCurrentPage(page) {
     if(page === undefined || this.nav.getActive() === undefined) return false;
     return this.nav.getActive().component === page.component;

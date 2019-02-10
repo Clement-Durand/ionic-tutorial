@@ -19,6 +19,9 @@ export class LoginSignInPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  /**
+   * Check if the email and password are the right ones, if so then move to the next page else notify the user
+   */
   validate() {
     if(!(this.email === this.emailRight) || !(this.password === this.passwordRight)) {
       this.hasFailed = true;
