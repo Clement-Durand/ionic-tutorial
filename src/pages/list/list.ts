@@ -11,7 +11,7 @@ import {SwapiService} from "../../services/swapi.service";
 })
 export class ListPage {
   icons: string[];
-  items: Array<{name: string, homeworld: string, films: string[], birth_year: string, species: string, gender: string, icon: string, img: string}>;
+  items: Array<{name: string, homeworld: string, films: string[], birth_year: string, species: string, gender: string, speciesIcon: string, img: string}>;
   listSize = 10;
   dbSize = 87;
   iconStar = 'star';
@@ -25,7 +25,8 @@ export class ListPage {
       Droid: 'logo-android',
     };
     this.items = [];
-    let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
+    let start=1;
+    //let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
     for(let i = 1; i <= this.listSize; i++) {
       let character = await this.swapiService.getCharacterFromId(i + start);
       let icon;
@@ -43,7 +44,7 @@ export class ListPage {
         birth_year: character.birth_year,
         species: character.species,
         gender: character.gender,
-        icon: icon,
+        speciesIcon: icon,
         img: img,
       });
     }

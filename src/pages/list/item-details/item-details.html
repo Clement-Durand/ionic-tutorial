@@ -7,12 +7,48 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.name}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
-  </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.name}}</b>
-  </h4>
+<ion-content class="item-details" *ngIf="selectedItem">
+  <div class="header-details section">
+    <img class="header-img" src="'./.' + {{selectedItem.img}}" />
+    <div class="mission-img-wrapper"><img class="mission-img" src="./../../../assets/imgs/mission-img.png" /></div>
+    <span class="header-name">
+      {{selectedItem.name}}
+    </span>
+  </div>
+  <div class="main-content scrollable">
+    <div class="infos-wrapper section sub-section section-grid">
+      <span class="section-title">About</span>
+      <div class="infos grid">
+        <span>Gender</span>
+        <span>{{selectedItem.gender}}</span>
+        <span>Year of birth</span>
+        <span>{{selectedItem.birth_year}}</span>
+        <span>Species</span>
+        <div class="species">
+          <span>{{selectedItem.species}}</span>
+          <ion-icon [name]="selectedItem.speciesIcon"></ion-icon>
+        </div><span>Homeworld</span>
+        <span>{{selectedItem.homeworld}}</span>
+      </div>
+    </div>
+    <div class="films-wrapper section sub-section section-grid">
+      <span class="section-title">Appeared in</span>
+      <div class="appeared-in grid">
+        <span *ngFor="let film of selectedItem.films">
+          {{film}}
+        </span>
+      </div>
+    </div>
+    <div class="trivia-wrapper section sub-section">
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at autem beatae corporis doloremque dolores
+        dolorum ducimus et, expedita in iure possimus, provident ratione, recusandae sed sequi vitae! Beatae, sunt!
+      </span>
+    </div>
+  </div>
+  <div class="footer-btns">
+    <button class="fav-btn">
+      Add to favorites
+    </button>
+  </div>
 </ion-content>

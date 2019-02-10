@@ -34,6 +34,7 @@ page-list {
     .item-name {
       .name {
         font-weight: bold;
+        color: rgb(0, 67, 146);
       }
       .favorite-icon {
         position: absolute;
@@ -46,7 +47,7 @@ page-list {
       }
     }
     .item-infos {
-      color: grey;
+      color: rgb(121, 139, 216);
       :not(:last-child)::after {
         content: ' - ';
       }
@@ -76,7 +77,7 @@ page-list {
       left: 0;
       height: .8px;
       width: 100%;
-      background: linear-gradient(to right, white, grey, white);
+      background: linear-gradient(to right, white, rgb(196, 210, 226), rgb(0, 67, 146), rgb(196, 210, 226), white);
     }
     position: absolute;
     width: 100%;
@@ -109,11 +110,18 @@ page-list {
 
   }
 
+
+  &:hover {
+    width: 10vw;
+    transition: .5s width;
+  }
 }
 
 .list-content {
   background: white;
-  margin-top: 44px; //takes into account the header but crops the last item
+  .scroll-content {
+    margin-top: 44px !important; //takes into account the header
+  }
 }
 
 .item-inner {
