@@ -20,7 +20,22 @@
 }
 
 ion-menu {
+  height: 100vh;
   .page-icon {
+    flex: .20;
     font-size: 30px;
+    text-align: center;
   }
- }
+  .page-title {
+    flex: .80;
+  }
+  .label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .list-ios > .item-block:last-child {
+    border: none !important;
+  }
+}

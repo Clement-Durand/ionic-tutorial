@@ -15,7 +15,7 @@ import {LoginWelcomePage} from "../pages/login/login-welcome/login-welcome";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = LoginWelcomePage;
+  rootPage = ListPage;
   pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(
@@ -32,6 +32,7 @@ export class MyApp {
       { title: 'Favorites', component: undefined, icon: 'bookmarks'},
       { title: 'Photos', component: undefined, icon: 'photos'},
       { title: 'News', component: undefined, icon: 'paper'},
+      { title: 'Chat', component: undefined, icon: 'chatboxes'},
       { title: 'Options', component: undefined, icon: 'settings'},
       { title: 'Logout', component: LoginWelcomePage, icon: 'log-out' },
     ];
