@@ -9,6 +9,7 @@ import {ListPage} from "../../list/list";
 })
 export class LoginSignInPage {
   hasFailed = false;
+  askedForHelp = false;
   emailRight = "johndoe@gmail.com";
   passwordRight = "JohnDoe1";
   email;

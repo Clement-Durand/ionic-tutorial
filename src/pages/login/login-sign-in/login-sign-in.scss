@@ -96,21 +96,49 @@
   border: 1px solid white;
   border-radius: 20px;
   color: white;
-  padding: 10px;
-  font-size: 1.5rem;
+  padding: 15px 25px;
+  font-size: 1.5em;
   opacity: 1;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .6);
   transition: .5s opacity;
   &:hover {
     background: white !important;
     color: black;
   }
+
+  &.hidden {
+    opacity: 0;
+  }
 }
 
-.validation-btn.hidden {
-  opacity: 0;
-}
-.reset-txt {
+.forgot-smthg {
+  position: absolute;
+  bottom: 15%;
+  background: rgb(0, 67, 146) ;
+  text-align: center;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, .6);
+  border-radius: 20px;
   color: white;
+  padding: 10px;
+  transform: translateY(0);
+  opacity: 1;
+  transition: .5s transform ease-out, .7s opacity ease-out;
+
+  &.hidden {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+
+
+.reset-txt {
+  font-size: 1.2em;
+  color: white;
+  &:hover {
+    text-decoration: underline;
+    color: rgb(0, 67, 146);
+    transition: .5s color;
+  }
 }
 
 

@@ -15,7 +15,7 @@ import {LoginWelcomePage} from "../pages/login/login-welcome/login-welcome";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = ListPage;
+  rootPage = LoginWelcomePage;
   pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(

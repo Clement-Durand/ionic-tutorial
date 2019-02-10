@@ -5,5 +5,10 @@
     <span><input [(ngModel)]="this.password" type="password" placeholder="PASSWORD" (keydown.enter)="validate()"></span>
   </div>
   <button class="validation-btn hidden" [class.hidden]="this.email === undefined || this.password === undefined" (click)="validate()">Validate</button>
-  <p class="reset-txt">Forgot email or password ?</p>
+
+  <div class="forgot-smthg hidden" [class.hidden]="!this.askedForHelp" (click)="this.askedForHelp = false; this.email = this.emailRight; this.password = this.passwordRight">
+    <p>Email is johndoe@gmail.com</p>
+    <p>Password is JohnDoe1</p>
+  </div>
+  <p class="reset-txt" (click)="this.askedForHelp = !this.askedForHelp">Forgot email or password ?</p>
 </ion-content>

@@ -25,8 +25,7 @@ export class ListPage {
       Droid: 'logo-android',
     };
     this.items = [];
-    let start=1;
-    //let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
+    let start = Math.floor(Math.random() * (this.dbSize - this.listSize -1) + 1);
     for(let i = 1; i <= this.listSize; i++) {
       let character = await this.swapiService.getCharacterFromId(i + start);
       let icon;
