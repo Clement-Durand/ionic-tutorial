@@ -120,7 +120,8 @@ page-list {
 .list-content {
   background: white;
   .scroll-content {
-    margin-top: 44px !important; //takes into account the header
+    margin-top: 10vh !important; //takes into account the header
+    border-top: none !important;
   }
 }
 
@@ -163,9 +164,6 @@ page-list {
    }
 }
 
-.menu-icon {
-  margin-left: 5vw;
-}
 .menu-icon .button-inner {
   display: flex;
   flex-direction: column;

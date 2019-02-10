@@ -17,10 +17,21 @@
 
 
 ion-header {
+  .bar-button {
+    padding-left: 5vw;
+    padding-right: 0;
+    margin: 0;
+  }
+  .toolbar {
+    height: 10vh;
+    border-bottom: 1px solid white;
+  }
   .toolbar-background {
     background-color: rgb(0, 67, 146);
   }
   button, .toolbar-title {
+    font-size: 2.2rem;
+    overflow: visible;
     color: white !important;
   }
   ion-navbar {
@@ -53,12 +64,12 @@ ion-menu {
   }
 
   .item {
-    height: 60px;
+    height: 8vh;
   }
 
   .item:first-child {
     .page-icon {
-      font-size: 5rem;
+      font-size: 4.5rem;
     }
   }
   .page-title {
@@ -82,8 +93,8 @@ ion-menu {
     &::before {
       content: '';
       position: absolute;
-      width: 100vw;
-      height: 60px;
+      width: 90vw;
+      height: 8vh;
       background: rgb(121, 139, 216);
       opacity: .7;
       left: 0;
@@ -92,7 +103,7 @@ ion-menu {
   }
 
   .profile {
-    padding: 10px 0 10px 20px;
+    padding: 1vh 0 1vh 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -103,8 +114,8 @@ ion-menu {
     .profile-img {
       box-sizing: border-box;
       flex: .3;
-      height: 50px;
-      max-width: 50px;
+      height: 8vh;
+      max-width: 8vh;
       border-radius: 50%;
       border: 3px solid rgb(121, 139, 216);
     ;
@@ -112,7 +123,7 @@ ion-menu {
     .profile-name {
       flex: .7;
       font-weight: bold;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
   }
 }
