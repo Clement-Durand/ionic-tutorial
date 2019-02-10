@@ -1,13 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
-import {IonicPage, Nav, NavController, NavParams} from 'ionic-angular';
-import {ListPage} from "../../list/list";
-
-/**
- * Generated class for the LoginWelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {LoginSignInPage} from "../login-sign-in/login-sign-in";
 
 @IonicPage()
 @Component({
@@ -15,12 +8,12 @@ import {ListPage} from "../../list/list";
   templateUrl: 'login-welcome.html',
 })
 export class LoginWelcomePage {
-  page = { title: 'My First List', component: ListPage };
+  nextPage = { title: 'Sign In', component: LoginSignInPage };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   login() {
-    this.navCtrl.setRoot(this.page.component);
+    this.navCtrl.setRoot(this.nextPage.component);
   }
 }

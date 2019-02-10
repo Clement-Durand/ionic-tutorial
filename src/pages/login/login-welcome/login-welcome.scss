@@ -1,3 +1,59 @@
-page-login-welcome {
+.login-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .8;
+  background-image: url('./../../../assets/imgs/welcome-background.jpg');
+  background-size: cover;
+}
+.login-content {
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
 
+.logo {
+  object-fit: none;
+  height: 40vh;
+}
+
+.btns {
+  width: 80vw;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  button {
+    min-height: 5vh;
+    background: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 25px 15px;
+    font-size: 1.5rem;
+    &:hover {
+      background: white !important;
+      color: black;
+    }
+  }
+  .fb-connexion-btn {
+    border-width: 1.8px;
+  }
+
+  .secondary-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button {
+      min-width: 40%;
+      padding: 0 20px;
+      flex: 0.3;
+    }
+  }
 }

@@ -1,18 +1,10 @@
-<!--
-  Generated template for the LoginWelcomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>login-welcome</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-  <button ion-button (click)="login()">login</button>
+<ion-content class="login-content">
+  <img class="logo" src="./../../../assets/imgs/yoobic-logo.png"/>
+  <div class="btns">
+    <button class="fb-connexion-btn" ion-button (click)="this.login()">Connect with Facebook</button>
+    <div class="secondary-btns">
+      <button class="sign-up-btn" ion-button (click)="this.login()">SIGN UP</button>
+      <button class="log-in-btn" ion-button (click)="this.login()">LOG IN</button>
+    </div>
+  </div>
 </ion-content>

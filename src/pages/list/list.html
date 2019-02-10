@@ -3,8 +3,8 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>My First List</ion-title>
-  </ion-navbar>
+    <ion-title>Characters List</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="list-content" *ngIf="items.length > 1">
@@ -14,7 +14,8 @@
       pullingText="Pull to refresh"></ion-refresher-content>
   </ion-refresher>
   <ion-list>
-      <button ion-item class="list-item" *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <!-- TODO Use actual cards instead of buttons-->
+    <button ion-item class="list-item" *ngFor="let item of items" (click)="itemTapped($event, item)">
         <div class="item-header">
           <img class="item-img" src="{{item.img}}">
         </div>
