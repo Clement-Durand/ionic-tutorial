@@ -1,6 +1,13 @@
 <ion-menu [content]="content">
 
   <ion-content>
+    <div class="profile">
+      <img class="profile-img" src="./../assets/imgs/profile-img.jpg"/>
+      <div class="profile-name">
+        <span class="first-name">John</span>
+        <span class="last-name">Doe</span>
+      </div>
+    </div>
     <ion-list>
       <button ion-item *ngFor="let p of pages" class="current" [class.current]="isCurrentPage(p)" (click)="openPage(p)" [disabled]="p.component === undefined">
         <ion-icon class="page-icon" name="{{p.icon}}"></ion-icon>
