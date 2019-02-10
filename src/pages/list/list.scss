@@ -162,3 +162,23 @@ page-list {
      }
    }
 }
+
+.menu-icon {
+  margin-left: 5vw;
+}
+.menu-icon .button-inner {
+  display: flex;
+  flex-direction: column;
+  .bar {
+    display: block;
+    width: 2.5em;
+    height: 0.2em;
+    margin: .15em 0;
+    border-right: 2em solid #fff;
+    border-left: 0.3em solid #d6d6d6;
+  }
+  .bar:nth-of-type(2) {
+    transform: rotate(-180deg);
+    border-right-color: green;
+  }
+}

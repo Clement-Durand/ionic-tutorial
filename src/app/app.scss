@@ -26,6 +26,9 @@ ion-header {
   button, .toolbar-title {
     color: white !important;
   }
+  ion-navbar {
+    padding-left: 0 !important;
+  }
 }
 
 ion-menu {
