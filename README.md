@@ -1,5 +1,6 @@
 # About
-## SW Character Listing
+## Mobile app
+## Character Listing
 
 Small project to get used to Ionic 
 
